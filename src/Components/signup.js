@@ -1,9 +1,11 @@
-import React from "react";
 import { useState } from "react";
+import "./signup.css";
+import Login from "./Login";
 function Signup() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [conPassword, setConPassword] = useState("");
+  const [isSignup, setisSignup] = useState(false);
   const submitHandler = async (e) => {
     e.preventDefault();
     if (password === conPassword) {
@@ -27,6 +29,7 @@ function Signup() {
           throw new Error(errorMessage.error.message);
         } else {
           console.log("user has successfully signed up");
+          setisSignup(true);
         }
       } catch (error) {
         alert(error);
@@ -40,8 +43,10 @@ function Signup() {
     setConPassword("");
   };
   return (
-    <>
-      <form onSubmit={submitHandler}>
+    <div >
+      {isSignup && <Login />}
+   { !isSignup &&  <form onSubmit={submitHandler} className="signup-form" >
+        <h1>Sign up</h1>
         <label htmlFor="email">Email</label>
         <input
           type="email"
@@ -76,8 +81,18 @@ function Signup() {
           required
         />
         <button type="submit">Sign up</button>
-      </form>
-    </>
+
+      </form>}
+        {isSignup ? (
+          <p onClick={() => setisSignup(false)}>
+            Don't have an account? Click to sign up.
+          </p>
+        ) : (
+          <p onClick={() => setisSignup(true)}>
+            Already have an account? Click to sign in.
+          </p>
+        )}
+    </div>
   );
 }
 
