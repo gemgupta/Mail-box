@@ -1,8 +1,10 @@
 import React from "react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
   const submitHandler = async (e) => {
     e.preventDefault();
 
@@ -33,7 +35,7 @@ function Login() {
         localStorage.setItem("email", tokenData.email);
         localStorage.setItem("key", tokenData.idToken);
         console.log("Login success");
-        // navigate("/welcome");
+        navigate("/welcome");
       }
     } catch (error) {
       alert(error);
@@ -68,7 +70,7 @@ function Login() {
           value={password}
           required
         />
-        <button type="submit">Sign in</button>
+        <button type="submit" className="btn btn-primary">Sign in</button>
       </form>
     </>
   );

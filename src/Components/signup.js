@@ -80,7 +80,7 @@ function Signup() {
           value={conPassword}
           required
         />
-        <button type="submit">Sign up</button>
+        <button type="submit" className="btn btn-primary">Sign up</button>
 
       </form>}
         {isSignup ? (

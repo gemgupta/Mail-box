@@ -27,7 +27,7 @@ input{
     margin-left: 10px;
     border: none;
 }
-button{
+/* button{
     background-color: rgb(47, 47, 210);
     color: white;
     height: 25px;
@@ -38,7 +38,7 @@ button{
     border-radius: 8px;
     border: none;
 
-}
+} */
 h1{
     text-align: center;
 }
