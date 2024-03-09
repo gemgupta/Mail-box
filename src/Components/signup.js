@@ -43,55 +43,67 @@ function Signup() {
     setConPassword("");
   };
   return (
-    <div >
+    <div>
       {isSignup && <Login />}
-   { !isSignup &&  <form onSubmit={submitHandler} className="signup-form" >
-        <h1>Sign up</h1>
-        <label htmlFor="email">Email</label>
-        <input
-          type="email"
-          name="email"
-          id="email"
-          onChange={(e) => {
-            setEmail(e.target.value);
-          }}
-          value={email}
-          required
-        />
-        <label htmlFor="password">Password</label>
-        <input
-          type="password"
-          name="password"
-          id="password"
-          onChange={(e) => {
-            setPassword(e.target.value);
-          }}
-          value={password}
-          required
-        />
-        <label htmlFor="confirmPass">Confirm password</label>
-        <input
-          type="password"
-          name="confirmPass"
-          id="confirmPass"
-          onChange={(e) => {
-            setConPassword(e.target.value);
-          }}
-          value={conPassword}
-          required
-        />
-        <button type="submit" className="btn btn-primary">Sign up</button>
-
-      </form>}
-        {isSignup ? (
-          <p onClick={() => setisSignup(false)}>
-            Don't have an account? Click to sign up.
-          </p>
-        ) : (
-          <p onClick={() => setisSignup(true)}>
-            Already have an account? Click to sign in.
-          </p>
-        )}
+      {!isSignup && (
+        <form onSubmit={submitHandler} className="signup-form">
+          <h1 className="h1">Sign up</h1>
+          <label className="label" htmlFor="email">
+            Email
+          </label>
+          <input
+            className="input"
+            type="email"
+            name="email"
+            id="email"
+            onChange={(e) => {
+              setEmail(e.target.value);
+            }}
+            value={email}
+            required
+          />
+          <label className="label" htmlFor="password">
+            Password
+          </label>
+          <input
+            className="input"
+            type="password"
+            name="password"
+            id="password"
+            onChange={(e) => {
+              setPassword(e.target.value);
+            }}
+            value={password}
+            required
+          />
+          <label className="label" htmlFor="confirmPass">
+            Confirm password
+          </label>
+          <input
+            className="input"
+            type="password"
+            name="confirmPass"
+            id="confirmPass"
+            onChange={(e) => {
+              setConPassword(e.target.value);
+            }}
+            value={conPassword}
+            required
+          />
+          <button type="submit" className="btn btn-primary">
+            Sign up
+          </button>
+        </form>
+      )}
+      {isSignup ? (
+        <p className="p" onClick={() => setisSignup(false)}>
+          Don't have an account? Click to sign up.
+        </p>
+      ) : (
+        <p className="p" onClick={() => setisSignup(true)}>
+          Already have an account? Click to sign in.
+        </p>
+      )}
     </div>
   );
 }

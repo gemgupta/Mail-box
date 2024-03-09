@@ -47,9 +47,10 @@ function Login() {
   return (
     <>
       <form onSubmit={submitHandler} className="signup-form">
-        <h1>Sign In</h1>
-        <label htmlFor="email">Email</label>
+        <h1 className="h1">Sign In</h1>
+        <label className="label" htmlFor="email">Email</label>
         <input
+        className="input"
           type="email"
           name="email"
           id="email"
@@ -59,8 +60,9 @@ function Login() {
           value={email}
           required
         />
-        <label htmlFor="password">Password</label>
+        <label className="label" htmlFor="password">Password</label>
         <input
+        className="input"
           type="password"
           name="password"
           id="password"

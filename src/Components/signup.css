@@ -9,7 +9,7 @@
     border-radius: 5px;
     
 }
-label{
+.label{
     display: block;
     color: white;
     font-size: 20px;
@@ -18,7 +18,7 @@ label{
   
     
 }
-input{
+.input{
     display: block;
     color: black;
     font-size: 20px;
@@ -39,11 +39,11 @@ input{
     border: none;
 
 } */
-h1{
+.h1{
     text-align: center;
 }
 
-p{
+.p{
     position: absolute;
     left: 36%;
     top: 70%;
